@@ -2,6 +2,8 @@ import jwt from 'jsonwebtoken';
 import dbConnect from '../../../../lib/dbConnect';
 import Guest from '../../../../lib/models/Guest';
 
+const SECRET_KEY = process.env.SECRET_KEY;
+
 export default async function handler(req, res) {
   const { method, body: data } = req;
   const { token, ...updatedData } = data;
@@ -15,7 +17,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const decoded = jwt.verify(token, 'iamanawfulsecret');
+    const decoded = jwt.verify(token, SECRET_KEY);
     const { user } = decoded;
     const guest = await Guest.findOneAndUpdate(
       {

@@ -2,6 +2,8 @@ import jwt from 'jsonwebtoken';
 import dbConnect from '../../../../lib/dbConnect';
 import Guest from '../../../../lib/models/Guest';
 
+const SECRET_KEY = process.env.SECRET_KEY;
+
 const opts = {
   expiresIn: '24h',
 };
@@ -17,19 +19,14 @@ export default async function handler(req, res) {
           rsvpCode: data,
         });
         if (guest) {
-          jwt.sign(
-            { user: data },
-            'iamanawfulsecret',
-            opts,
-            function (err, token) {
-              res.status(200).json({
-                success: true,
-                token,
-                guest,
-              });
-              return;
-            }
-          );
+          jwt.sign({ user: data }, SECRET_KEY, opts, function (err, token) {
+            res.status(200).json({
+              success: true,
+              token,
+              guest,
+            });
+            return;
+          });
         } else {
           res.status(404).json({
             success: false,
