@@ -52,7 +52,7 @@ const RSVP = () => {
   const parseData = (data, token) => ({
     ...data,
     token,
-    isAttending: true,
+    isAttending: data.hasRsvpd ? data.isAttending : true,
   });
 
   const handleResponse = (data) => {

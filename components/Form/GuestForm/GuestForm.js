@@ -12,6 +12,7 @@ import {
 import { codeGenerator } from '../../../utils/utils';
 import AdditionalGuests from '../AdditionalGuests';
 import Song from '../Song';
+import { useEffect } from 'react';
 
 const FormField = ({ children }) => <Box>{children}</Box>;
 
@@ -49,6 +50,7 @@ const GuestForm = ({ data, apiCall, submitText }) => {
       initialValues={data}
       validationSchema={schema}
       onSubmit={handleSubmit}
+      enableReinitialize={true}
     >
       {({ setFieldValue, values }) => {
         return (

@@ -89,26 +89,28 @@ const RsvpForm = ({ data, apiCall, handleClose, onSuccessCallback }) => {
                   <Song />
                 </Paper>
 
-                <Paper>
-                  <FormControl>
-                    <FormLabel
-                      sx={{ marginBottom: '1rem', fontWeight: 'bolder' }}
-                    >
-                      Your invitation also includes the following people. Please
-                      can you indicate if they will be attending?
-                    </FormLabel>
-                    <FieldArray
-                      name='additionalGuests'
-                      render={(arrayHelpers) => (
-                        <AdditionalGuestsLists
-                          values={values}
-                          arrayHelpers={arrayHelpers}
-                          editingDisabled={true}
-                        />
-                      )}
-                    />
-                  </FormControl>
-                </Paper>
+                {values.additionalGuests.length ? (
+                  <Paper>
+                    <FormControl>
+                      <FormLabel
+                        sx={{ marginBottom: '1rem', fontWeight: 'bolder' }}
+                      >
+                        Your invitation also includes the following people.
+                        Please can you indicate if they will be attending?
+                      </FormLabel>
+                      <FieldArray
+                        name='additionalGuests'
+                        render={(arrayHelpers) => (
+                          <AdditionalGuestsLists
+                            values={values}
+                            arrayHelpers={arrayHelpers}
+                            editingDisabled={true}
+                          />
+                        )}
+                      />
+                    </FormControl>
+                  </Paper>
+                ) : null}
 
                 <ButtonGroup>
                   <Button
