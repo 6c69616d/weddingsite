@@ -12,7 +12,6 @@ import { fetcher } from '../../utils/utils';
 
 const Admin = () => {
   const router = useRouter();
-  const basePath = process.env.NEXT_PUBLIC_URL;
   const { mutate } = useSWRConfig();
 
   const [dialogProps, setDialogProps] = useState({
@@ -55,7 +54,7 @@ const Admin = () => {
     });
   };
 
-  const columns = getColumnData(basePath, deleteCallback);
+  const columns = getColumnData(deleteCallback);
 
   return (
     <>
@@ -65,7 +64,7 @@ const Admin = () => {
             <Box display={'flex'} justifyContent={'flex-end'}>
               <Button
                 variant='contained'
-                onClick={() => router.push(`${basePath}/admin/addGuest/`)}
+                onClick={() => router.push(`admin/addGuest/`)}
               >
                 Add New Guest
               </Button>

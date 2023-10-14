@@ -10,7 +10,7 @@ const inviteOptions = {
   eve: 'Evening Only',
 };
 
-export const getColumnData = (basePath, deleteCallback) => {
+export const getColumnData = (deleteCallback) => {
   const router = useRouter();
   const theme = useTheme();
   const columns = [
@@ -65,9 +65,7 @@ export const getColumnData = (basePath, deleteCallback) => {
         <Grid container direction='row'>
           <Grid item>
             <IconButton
-              onClick={() =>
-                router.push(`${basePath}/admin/guests/edit/${row.id}`)
-              }
+              onClick={() => router.push(`admin/guests/edit/${row.id}`)}
             >
               <VisibilityIcon />
             </IconButton>
