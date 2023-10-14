@@ -7,7 +7,7 @@ import axios from 'axios';
 import Dialog from '../../components/Dialog/Dialog';
 import DialogActions from '../../components/Dialog/DialogActions';
 import DataTable from '../../components/DataTable';
-import { getColumnData } from './columnData';
+import { getColumnData } from '../../utils/columnData';
 import { fetcher } from '../../utils/utils';
 
 const Admin = () => {
@@ -75,7 +75,13 @@ const Admin = () => {
             </Box>
           </>
         ) : isLoading ? (
-          <CircularProgress />
+          <Box
+            display='flex'
+            justifyContent='center'
+            sx={{ marginTop: '4rem' }}
+          >
+            <CircularProgress />
+          </Box>
         ) : error ? (
           <div>Error!</div>
         ) : null}
