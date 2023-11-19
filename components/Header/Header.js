@@ -51,7 +51,7 @@ const Header = (props) => {
                 <Button
                   startIcon={route.icon}
                   sx={{
-                    color: '#333',
+                    color: 'primary.main',
                   }}
                 >
                   {route.name}
@@ -63,7 +63,7 @@ const Header = (props) => {
                 startIcon={<AdminIcon />}
                 onClick={() => router.push('/admin')}
                 sx={{
-                  color: '#333',
+                  color: 'primary.main',
                   textDecoration:
                     router.pathname === '/admin' ? 'underline' : 'none',
                 }}
