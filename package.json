@@ -17,6 +17,7 @@
     "@emotion/server": "^11.11.0",
     "@emotion/styled": "^11.10.6",
     "@fontsource/amatic-sc": "^5.0.11",
+    "@fontsource/belleza": "^5.0.8",
     "@fontsource/roboto": "^5.0.8",
     "@fontsource/tangerine": "^5.0.8",
     "@material-ui/lab": "^4.0.0-alpha.61",

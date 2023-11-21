@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Box, Button, TextField, Typography, Snackbar } from '@mui/material';
+
 import Dialog from '../components/Dialog';
 import RsvpForm from '../components/Form/RsvpForm/RsvpForm';
 import DialogActions from '../components/Dialog/DialogActions';
-import axios from 'axios';
 
 const RSVP = () => {
   const [value, setValue] = useState('');
@@ -53,7 +54,6 @@ const RSVP = () => {
         handleResponse(res.data);
       })
       .catch((err) => {
-        console.error(err);
         setSnackProps((prev) => ({
           ...prev,
           open: true,

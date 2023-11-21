@@ -12,6 +12,7 @@ import '@fontsource/amatic-sc/400.css';
 import '@fontsource/amatic-sc/700.css';
 import '@fontsource/tangerine/400.css';
 import '@fontsource/tangerine/700.css';
+import '@fontsource/belleza/400.css';
 
 const clientSideEmotionCache = createEmotionCache();
 

@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken';
+
 import dbConnect from '../../../../lib/dbConnect';
 import Guest from '../../../../lib/models/Guest';
 
