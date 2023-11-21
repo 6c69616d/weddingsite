@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Box, Button, TextField, Typography } from '@mui/material';
+import axios from 'axios';
+import { Box, Button, TextField, Typography, Snackbar } from '@mui/material';
+
 import Dialog from '../components/Dialog';
 import RsvpForm from '../components/Form/RsvpForm/RsvpForm';
 import DialogActions from '../components/Dialog/DialogActions';
@@ -8,7 +10,6 @@ const RSVP = () => {
   const [value, setValue] = useState('');
   const [error, setError] = useState('');
   const [buttonDisabled, setButtonDisabled] = useState(false);
-  const contentType = 'application/json';
 
   const handleDialogClose = () => {
     setDialogProps({
@@ -22,6 +23,20 @@ const RSVP = () => {
     onClose: handleDialogClose,
   });
 
+  const handleSnackClose = (evt, reason) => {
+    if (reason === 'clickaway') return;
+    setSnackProps((prev) => ({
+      ...prev,
+      open: false,
+    }));
+  };
+
+  const [snackProps, setSnackProps] = useState({
+    open: false,
+    autoHideDuration: 3000,
+    onClose: handleSnackClose,
+  });
+
   const onSuccessCallback = () => {
     setDialogProps({
       open: true,
@@ -32,21 +47,21 @@ const RSVP = () => {
     });
   };
 
-  const validateCode = async (val) => {
-    try {
-      const res = await fetch('/api/rsvp/validate', {
-        method: 'POST',
-        headers: {
-          Accept: contentType,
-          'Content-Type': contentType,
-        },
-        body: JSON.stringify(value),
+  const validateCode = async () => {
+    axios
+      .post('/api/rsvp/validate', { rsvpCode: value })
+      .then((res) => {
+        handleResponse(res.data);
+      })
+      .catch((err) => {
+        setSnackProps((prev) => ({
+          ...prev,
+          open: true,
+          severity: 'error',
+          message: 'Code not found. Please contact us if you need assistance.',
+        }));
+        setButtonDisabled(false);
       });
-      const data = await res.json();
-      handleResponse(data);
-    } catch (err) {
-      console.log('err', err);
-    }
   };
 
   const parseData = (data, token) => ({
@@ -125,6 +140,7 @@ const RSVP = () => {
         </Button>
       </Box>
       <Dialog {...dialogProps} />
+      <Snackbar {...snackProps} />
     </>
   );
 };

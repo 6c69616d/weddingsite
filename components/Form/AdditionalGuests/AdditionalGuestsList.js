@@ -11,6 +11,8 @@ const AdditionalGuestsLists = ({ values, arrayHelpers, editingDisabled }) => (
         gap={2}
         sx={{
           display: 'flex',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
           width: '100%',
           alignItems: 'center',
           padding: 1,
@@ -21,13 +23,17 @@ const AdditionalGuestsLists = ({ values, arrayHelpers, editingDisabled }) => (
           },
         }}
       >
+ 
         <FormikTextField
           name={`additionalGuests.${index}.name`}
           disabled={editingDisabled}
-          sx={{ flex: 1 }}
+          sx={{ flex: 1, minWidth: '50%'}}
+          flexItem
         />
         <Divider orientation='vertical' variant='middle' flexItem />
         <FormikCheckbox
+          flexItem
+          sx={{ flex: 2 }}
           name={`additionalGuests.${index}.isAttending`}
           label='Is Attending?'
         />

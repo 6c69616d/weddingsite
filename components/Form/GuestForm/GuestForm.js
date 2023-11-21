@@ -13,6 +13,7 @@ import { codeGenerator } from '../../../utils/utils';
 import AdditionalGuests from '../AdditionalGuests';
 import Song from '../Song';
 import { useEffect } from 'react';
+import axios from 'axios';
 
 const FormField = ({ children }) => <Box>{children}</Box>;
 
@@ -40,9 +41,29 @@ const GuestForm = ({ data, apiCall, submitText }) => {
   // TODO - cancel click function that warns when form is dirty
   const handleCancel = (dirty) => {};
 
-  const handleGenerateCode = (name, setFieldValue) => {
-    const code = codeGenerator();
-    setFieldValue(name, code);
+  const codeIsUnique = async (code) => {
+    try {
+      const res = await axios.post('/api/rsvp/validate', { rsvpCode: code });
+      return false;
+    } catch (err) {
+      if (err?.response?.status === 404) return true;
+      return false;
+    }
+  };
+
+  const handleGenerateCode = async (name, setFieldValue) => {
+    let code,
+      unique = false,
+      retries = 0;
+
+    while (!unique && retries < 3) {
+      code = codeGenerator();
+      unique = await codeIsUnique(code);
+      retries++;
+    }
+    if (code) {
+      setFieldValue(name, code);
+    }
   };
 
   return (
