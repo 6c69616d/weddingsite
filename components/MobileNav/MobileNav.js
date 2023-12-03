@@ -22,12 +22,14 @@ const Drawer = ({ handleDrawerToggle, routes, router }) => (
         >
           <ListItemButton
             sx={{
+              fontFamily: 'Belleza',
+              fontWeight: 'bold',
               textAlign: 'center',
               textDecoration:
                 router.pathname === route.path ? 'underline' : 'none',
             }}
           >
-            <ListItemText primary={route.name} />
+            <ListItemText disableTypography={true} primary={route.name} />
           </ListItemButton>
         </ListItem>
       ))}

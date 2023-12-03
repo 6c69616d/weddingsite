@@ -1,14 +1,18 @@
-import { Box, Button } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 const Location = () => {
   return (
-    <Box display='flex' flexDirection={'column'}>
+    <Box display='flex' flexDirection={'column'} justifyContent={'center'}>
       <Box>
-        <h1 style={{ textAlign: 'center' }}>The Location</h1>
-        <h2 style={{ textAlign: 'center' }}>Wentbridge House Hotel</h2>
-        <h2 style={{ textAlign: 'center' }}>
-          The Great North Road, Wentbridge, Pontefract WF8 3JJ
-        </h2>
+      <Typography variant='h3' sx={{ fontFamily: 'Belleza', fontWeight: 'bold', textAlign: 'center', paddingBottom: '10px' }} >
+        The Location
+      </Typography>
+      <Typography variant='h5' sx={{ fontFamily: 'Belleza', fontWeight: 'bold', textAlign: 'center' }} >
+        Wentbridge House Hotel
+      </Typography>
+      <Typography variant='h5' sx={{ fontFamily: 'Belleza', fontWeight: 'bold', textAlign: 'center', paddingBottom: '10px'}} >
+        The Great North Road, Wentbridge, Pontefract WF8 3JJ
+      </Typography>
       </Box>
       <Box>
         <iframe

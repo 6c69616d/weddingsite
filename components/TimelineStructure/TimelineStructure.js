@@ -51,14 +51,14 @@ const TimelineStructure = () => {
     <Timeline position='alternate'>
       {events.map((e, i) => (
         <TimelineItem key={i}>
-          <TimelineOppositeContent color='text.secondary'>
+          <TimelineOppositeContent sx={{fontFamily:'Belleza', fontWeight: 'bold',}} color='text.secondary'>
             {e.time}
           </TimelineOppositeContent>
           <TimelineSeparator>
             {e.icon ? <TimelineDot color="primary" variant="outlined" >{e.icon}</TimelineDot> : <TimelineDot color="primary" />}
             {i !== events.length - 1 ? <TimelineConnector sx={{ bgcolor: 'primary.main' }} /> : null}
           </TimelineSeparator>
-          <TimelineContent>{e.event}</TimelineContent>
+          <TimelineContent sx={{fontFamily:'Belleza', fontWeight: 'bold',}}>{e.event}</TimelineContent>
         </TimelineItem>
       ))}
     </Timeline>
