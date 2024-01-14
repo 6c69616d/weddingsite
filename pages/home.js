@@ -1,6 +1,12 @@
-import { Box, Typography } from '@mui/material';
+import { Box, useMediaQuery, useTheme } from '@mui/material';
+import '@pqina/flip/dist/flip.min.css';
+
+import EventCountdown from '../components/EventCountdown';
+import Typography from '../components/Typography';
 
 const Home = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   return (
     <div
       style={{
@@ -12,32 +18,17 @@ const Home = () => {
         backgroundPosition: 'center',
       }}
     >
-      <Box display='flex' justifyContent={'center'}>
-        <Typography
-          variant='h2'
-          sx={{
-            fontFamily: 'Belleza',
-            fontWeight: 'bold',
-            textAlign: 'center',
-          }}
-        >
+      <Box
+        display='flex'
+        flexDirection='column'
+        justifyContent={'center'}
+        alignItems='center'
+      >
+        <Typography variant={isMobile ? 'h3' : 'h2'}>
           You're invited to the Sykes wedding!
         </Typography>
+        <EventCountdown value='2024-06-29T13:00:00' />
       </Box>
-      {/* <h1 style={{ textAlign: 'center' }}>
-        YOU'RE INVITED TO CELEBRATE THE SYKES WEDDING!
-      </h1> */}
-      {/* <FlipCountdown
-            size='medium'
-            theme='dark'
-            yearTitle=' '
-            monthTitle=' '
-            dayTitle=' '
-            hourTitle=' '
-            minuteTitle=' '
-            secondTitle=' '
-            endAt={'2024-06-29 00:00:00'} // Date/Time
-          /> */}
     </div>
   );
 };

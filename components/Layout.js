@@ -1,4 +1,4 @@
-import { Container } from '@mui/material';
+import { Container, Box } from '@mui/material';
 import Header from './Header/';
 
 const Layout = ({ children }) => {
@@ -6,7 +6,9 @@ const Layout = ({ children }) => {
     <div>
       <Container maxWidth='lg'>
         <Header />
-        {children}
+        <Box className='globalContainer' style={{ opacity: 0 }}>
+          {children}
+        </Box>
       </Container>
     </div>
   );

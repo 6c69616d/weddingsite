@@ -1,0 +1,13 @@
+diff --git a/node_modules/@pqina/flip/dist/flip.module.js b/node_modules/@pqina/flip/dist/flip.module.js
+index 8cc8100..a840e67 100644
+--- a/node_modules/@pqina/flip/dist/flip.module.js
++++ b/node_modules/@pqina/flip/dist/flip.module.js
+@@ -1,4 +1,6 @@
+ import Tick from '../tick/tick.core.module';
+ import Flip from './tick.view.flip.module';
+-Tick.plugin.add(Flip);
++
++if (Tick && Tick.plugin) Tick.plugin.add(Flip);
++
+ export default Tick;
+\ No newline at end of file

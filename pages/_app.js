@@ -34,6 +34,8 @@ let theme = createTheme({
   },
 });
 
+console.log('theme', theme);
+
 const App = ({
   Component,
   emotionCache = clientSideEmotionCache,
