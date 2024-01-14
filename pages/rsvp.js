@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import { Box, Button, TextField, Typography, Snackbar } from '@mui/material';
 
 import Dialog from '../components/Dialog';
 import RsvpForm from '../components/Form/RsvpForm/RsvpForm';
-import DialogActions from '../components/Dialog/DialogActions';
 
 const RSVP = () => {
   const [value, setValue] = useState('');
@@ -128,14 +127,23 @@ const RSVP = () => {
         alignItems={'center'}
       >
         <TextField
-          sx={{ minWidth: '250px', marginBottom: '1rem', fontFamily: 'Belleza',  }}
+          sx={{
+            minWidth: '250px',
+            marginBottom: '1rem',
+            fontFamily: 'Belleza',
+          }}
           label='Please enter your RSVP Code'
           value={value}
           onChange={handleChange}
           helperText={error}
           error={Boolean(error)}
         />
-        <Button type='submit' variant='contained' disabled={buttonDisabled} sx={{fontFamily: 'Belleza'}}>
+        <Button
+          type='submit'
+          variant='contained'
+          disabled={buttonDisabled}
+          sx={{ fontFamily: 'Belleza' }}
+        >
           Submit
         </Button>
       </Box>
