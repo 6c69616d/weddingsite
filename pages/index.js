@@ -17,11 +17,11 @@ const Home = () => {
       <Section sectionId='location'>
         <Location />
       </Section>
-      <Section sectionId='timeline'>
-        <Timeline />
-      </Section>
       <Section sectionId='accomodation'>
         <Accomodation />
+      </Section>
+      <Section sectionId='timeline'>
+        <Timeline />
       </Section>
       <Section sectionId='rsvp'>
         <RSVP />

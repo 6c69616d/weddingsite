@@ -24,7 +24,10 @@ const StyledTimeContainer = ({ timeUnit }) => {
       >
         <span data-view='flip'></span>
       </div>
-      <p className='tick-text-inline' style={{ margin: 0, fontSize: 20 }}>
+      <p
+        className='tick-text-inline'
+        style={{ margin: 0, fontSize: 20, marginTop: '4px' }}
+      >
         {timeUnit.toUpperCase()}
       </p>
     </Box>

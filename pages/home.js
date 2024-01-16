@@ -49,6 +49,7 @@ const Home = () => {
         >
           You're invited to the Sykes wedding!
         </Typography>
+        <EventCountdown value='2024-06-29T13:00:00' />
         <Image
           src={logo}
           alt={'Sykes wedding logo'}
@@ -58,7 +59,6 @@ const Home = () => {
             maxWidth: '100%',
           }}
         />
-        <EventCountdown value='2024-06-29T13:00:00' />
       </Box>
     </>
   );
