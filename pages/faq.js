@@ -22,7 +22,7 @@ const questions = [
     id: 3,
     question: 'When should I RSVP?',
     answer:
-      'Please RSVP using the RSVP code on your invite by ______. Any RSVPs received after this date may not be able to be accomodated.',
+      'Please RSVP using the RSVP code on your invite by 30th April 2024. Any RSVPs received after this date may not be accomodated.',
   },
   {
     id: 4,
@@ -60,8 +60,12 @@ const questions = [
 ];
 
 const styles = {
-  title: {
+  question: {
+    fontFamily: 'Belleza',
     fontWeight: 'bold',
+  },
+  answer: {
+    fontFamily: 'Belleza',
   },
 };
 
@@ -86,10 +90,10 @@ const Faq = () => {
             aria-controls='panel1a-content'
             id='panel1a-header'
           >
-            <Typography style={styles.title}>{e.question}</Typography>
+            <Typography style={styles.question}>{e.question}</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>{e.answer}</Typography>
+            <Typography style={styles.answer}>{e.answer}</Typography>
           </AccordionDetails>
         </Accordion>
       ))}

@@ -20,16 +20,16 @@ export const routes = [
     icon: <LocationOnIcon />,
   },
   {
-    id: 'timeline',
-    path: '/#timeline',
-    name: 'Timeline',
-    icon: <TimelineIcon />,
-  },
-  {
     id: 'accomodation',
     path: '/#accomodation',
     name: 'Accomodation',
     icon: <HotelIcon />,
+  },
+  {
+    id: 'timeline',
+    path: '/#timeline',
+    name: 'Timeline',
+    icon: <TimelineIcon />,
   },
   {
     id: 'rsvp',

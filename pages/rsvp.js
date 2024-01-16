@@ -82,7 +82,7 @@ const RSVP = () => {
             fontSize: '2rem',
             fontWeight: 700,
             lineHeight: '1',
-            fontFamily: 'Tangerine, sans-serif',
+            fontFamily: 'Belleza',
           },
         },
         open: true,
@@ -128,14 +128,14 @@ const RSVP = () => {
         alignItems={'center'}
       >
         <TextField
-          sx={{ minWidth: '250px', marginBottom: '1rem' }}
+          sx={{ minWidth: '250px', marginBottom: '1rem', fontFamily: 'Belleza',  }}
           label='Please enter your RSVP Code'
           value={value}
           onChange={handleChange}
           helperText={error}
           error={Boolean(error)}
         />
-        <Button type='submit' variant='contained' disabled={buttonDisabled}>
+        <Button type='submit' variant='contained' disabled={buttonDisabled} sx={{fontFamily: 'Belleza'}}>
           Submit
         </Button>
       </Box>
