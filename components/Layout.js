@@ -6,9 +6,7 @@ const Layout = ({ children }) => {
     <div>
       <Container maxWidth='lg'>
         <Header />
-        <Box className='globalContainer' style={{ opacity: 0 }}>
-          {children}
-        </Box>
+        <Box className='globalContainer'>{children}</Box>
       </Container>
     </div>
   );

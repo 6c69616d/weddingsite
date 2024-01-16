@@ -25,7 +25,7 @@ const Header = (props) => {
   return (
     <Box
       className='globalHeader'
-      sx={{ display: 'flex', position: 'sticky', 'z-index': 1, top: 0 }}
+      sx={{ display: 'flex', position: 'sticky', 'z-index': 200, top: 0 }}
     >
       <AppBar
         position='static'

@@ -11,7 +11,7 @@ html {
 .tick-flip-panel {
   background-color: #914555 !important;
 }
-
+/* 
 .globalHeader {
   opacity: 0;
   animation: headerFade 1s ease 0.5s forwards;
@@ -39,4 +39,4 @@ html {
   100% {
     opacity: 1;
   }
-}
+} */
