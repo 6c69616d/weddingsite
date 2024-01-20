@@ -1,10 +1,9 @@
 import { useRouter } from 'next/router';
 import GuestForm from '../../../../components/Form/GuestForm/GuestForm';
-import { Box, CircularProgress } from '@mui/material';
+import { Box } from '@mui/material';
 import useSWR, { useSWRConfig } from 'swr';
 import { fetcher } from '../../../../utils/utils';
 import axios from 'axios';
-import { useEffect } from 'react';
 
 const EditGuest = () => {
   const router = useRouter();

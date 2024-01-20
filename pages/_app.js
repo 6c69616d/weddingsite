@@ -13,6 +13,7 @@ import '@fontsource/amatic-sc/700.css';
 import '@fontsource/tangerine/400.css';
 import '@fontsource/tangerine/700.css';
 import '@fontsource/belleza/400.css';
+import Head from 'next/head';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -72,6 +73,10 @@ const App = ({
       <SessionProvider session={session}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
+          <Head>
+            <title>The Sykes Wedding</title>
+            <meta property='og:title' content='The Sykes Wedding' key='title' />
+          </Head>
           <Layout>
             <Component {...pageProps} />
           </Layout>
