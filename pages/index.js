@@ -5,6 +5,7 @@ import Location from './location';
 import Accomodation from './accomodation';
 import RSVP from './rsvp';
 import Faq from './faq';
+import Footer from '../components/Footer';
 
 const Home = () => {
   return (
@@ -27,6 +28,7 @@ const Home = () => {
       <Section sectionId='faq'>
         <Faq />
       </Section>
+      <Footer />
     </>
   );
 };
