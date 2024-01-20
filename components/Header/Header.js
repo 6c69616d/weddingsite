@@ -71,8 +71,6 @@ const Header = (props) => {
                   color: 'primary.main',
                   fontFamily: 'Belleza',
                   fontWeight: 'bold',
-                  textDecoration:
-                    router.pathname === '/admin' ? 'underline' : 'none',
                 }}
               >
                 Admin
@@ -90,10 +88,6 @@ const Header = (props) => {
           handleDrawerToggle={handleDrawerToggle}
         />
       </Box>
-
-      {/* <Box>
-        <Toolbar />
-      </Box> */}
     </Box>
   );
 };

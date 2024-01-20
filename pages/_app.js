@@ -32,9 +32,35 @@ let theme = createTheme({
       primary: '#fff',
     },
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      mobile: 440,
+      largeMobile: 554,
+      tablet: 768,
+      laptop: 1028,
+      desktop: 1200,
+      sm: 700,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+    },
+  },
 });
 
-console.log('theme', theme);
+theme.typography.h1 = {
+  fontSize: 32,
+  lineHeight: 1.2,
+  [theme.breakpoints.up('mobile')]: {
+    fontSize: 42,
+  },
+  [theme.breakpoints.up('largeMobile')]: {
+    fontSize: 50,
+  },
+  [theme.breakpoints.up('tablet')]: {
+    fontSize: 60,
+  },
+};
 
 const App = ({
   Component,

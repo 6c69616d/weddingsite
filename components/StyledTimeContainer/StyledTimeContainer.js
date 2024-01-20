@@ -1,7 +1,8 @@
-import { Box, useMediaQuery } from '@mui/material';
+import { Box, useTheme } from '@mui/material';
 
 const StyledTimeContainer = ({ timeUnit }) => {
-  const isLarge = useMediaQuery('(min-width: 1024px)');
+  const theme = useTheme();
+
   return (
     <Box
       sx={{
@@ -9,12 +10,27 @@ const StyledTimeContainer = ({ timeUnit }) => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        marginRight: '20px',
+        marginRight: '5px',
         backgroundColor: '#333',
         color: '#fff',
         borderRadius: '10px',
-        padding: '1rem',
-        fontSize: isLarge ? '3.5rem' : '2.5rem',
+        paddingX: '.5rem',
+        paddingY: '.75rem',
+        [theme.breakpoints.up('mobile')]: {
+          fontSize: '1.4rem',
+        },
+        [theme.breakpoints.up('largeMobile')]: {
+          fontSize: '2rem',
+        },
+        [theme.breakpoints.up('tablet')]: {
+          fontSize: '2.5rem',
+          marginRight: '8px',
+          padding: '1rem',
+        },
+        [theme.breakpoints.up('laptop')]: {
+          fontSize: '3.5rem',
+          marginRight: '18px',
+        },
       }}
     >
       <div
@@ -24,12 +40,21 @@ const StyledTimeContainer = ({ timeUnit }) => {
       >
         <span data-view='flip'></span>
       </div>
-      <p
-        className='tick-text-inline'
-        style={{ margin: 0, fontSize: 20, marginTop: '4px' }}
+      <Box
+        sx={{
+          fontSize: 12,
+          [theme.breakpoints.up('tablet')]: {
+            fontSize: 16,
+          },
+          [theme.breakpoints.up('laptop')]: {
+            fontSize: 20,
+          },
+        }}
       >
-        {timeUnit.toUpperCase()}
-      </p>
+        <p className='tick-text-inline' style={{ margin: 0, marginTop: '4px' }}>
+          {timeUnit.toUpperCase()}
+        </p>
+      </Box>
     </Box>
   );
 };

@@ -1,5 +1,3 @@
-import FlipCountdown from '@rumess/react-flip-countdown';
-import { useSession } from 'next-auth/react';
 import Section from '../components/Section/Section';
 import Intro from './home';
 import Timeline from './timeline';

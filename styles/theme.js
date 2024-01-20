@@ -21,4 +21,18 @@ export const theme = createTheme({
       primary: '#fff',
     },
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      mobile: 440,
+      largeMobile: 554,
+      tablet: 768,
+      laptop: 1028,
+      desktop: 1200,
+      sm: 700,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+    },
+  },
 });
