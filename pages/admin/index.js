@@ -57,7 +57,12 @@ const Admin = () => {
   const columns = getColumnData(deleteCallback);
 
   return (
-    <>
+    <div>
+      <style jsx global>{`
+        body {
+          background: rgb(255, 255, 255);
+        }
+      `}</style>
       <Box mt={3}>
         {data ? (
           <>
@@ -86,7 +91,7 @@ const Admin = () => {
         ) : null}
       </Box>
       <Dialog {...dialogProps} />
-    </>
+    </div>
   );
 };
 

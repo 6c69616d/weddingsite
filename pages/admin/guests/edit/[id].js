@@ -26,6 +26,11 @@ const EditGuest = () => {
 
   return (
     <Box>
+      <style jsx global>{`
+        body {
+          background: rgb(255, 255, 255);
+        }
+      `}</style>
       {data ? (
         <GuestForm
           data={data}
