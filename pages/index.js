@@ -10,6 +10,15 @@ import Footer from '../components/Footer';
 const Home = () => {
   return (
     <>
+      <style jsx global>{`
+        body {
+          background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 1) 85%,
+            #914555 100%
+          );
+        }
+      `}</style>
       <Section sectionId='home'>
         <Intro />
       </Section>

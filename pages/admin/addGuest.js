@@ -30,18 +30,13 @@ const AddGuest = () => {
   };
 
   return (
-    <div>
-      <style jsx global>{`
-        body {
-          background: rgb(255, 255, 255);
-        }
-      `}</style>
+    <>
       <GuestForm
         data={guest}
         apiCall={createGuest}
         submitText='Add New Guest'
       />
-    </div>
+    </>
   );
 };
 
