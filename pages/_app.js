@@ -13,6 +13,7 @@ import '@fontsource/amatic-sc/700.css';
 import '@fontsource/tangerine/400.css';
 import '@fontsource/tangerine/700.css';
 import '@fontsource/belleza/400.css';
+import Head from 'next/head';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -32,7 +33,35 @@ let theme = createTheme({
       primary: '#fff',
     },
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      mobile: 440,
+      largeMobile: 554,
+      tablet: 768,
+      laptop: 1028,
+      desktop: 1200,
+      sm: 700,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+    },
+  },
 });
+
+theme.typography.h1 = {
+  fontSize: 32,
+  lineHeight: 1.2,
+  [theme.breakpoints.up('mobile')]: {
+    fontSize: 42,
+  },
+  [theme.breakpoints.up('largeMobile')]: {
+    fontSize: 50,
+  },
+  [theme.breakpoints.up('tablet')]: {
+    fontSize: 60,
+  },
+};
 
 const App = ({
   Component,
@@ -44,6 +73,10 @@ const App = ({
       <SessionProvider session={session}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
+          <Head>
+            <title>The Sykes Wedding</title>
+            <meta property='og:title' content='The Sykes Wedding' key='title' />
+          </Head>
           <Layout>
             <Component {...pageProps} />
           </Layout>

@@ -30,7 +30,13 @@ const AddGuest = () => {
   };
 
   return (
-    <GuestForm data={guest} apiCall={createGuest} submitText='Add New Guest' />
+    <>
+      <GuestForm
+        data={guest}
+        apiCall={createGuest}
+        submitText='Add New Guest'
+      />
+    </>
   );
 };
 

@@ -78,7 +78,7 @@ const Faq = () => {
 
   return (
     <div>
-      {questions.map((e, i) => (
+      {questions.map((e) => (
         <Accordion
           key={e.id}
           expanded={expanded === e.question}

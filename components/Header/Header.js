@@ -23,7 +23,10 @@ const Header = (props) => {
   };
 
   return (
-    <Box sx={{ display: 'flex', position: 'sticky', 'z-index': 1, top: 0 }}>
+    <Box
+      className='globalHeader'
+      sx={{ display: 'flex', position: 'sticky', 'z-index': 200, top: 0 }}
+    >
       <AppBar
         position='static'
         component='nav'
@@ -68,8 +71,6 @@ const Header = (props) => {
                   color: 'primary.main',
                   fontFamily: 'Belleza',
                   fontWeight: 'bold',
-                  textDecoration:
-                    router.pathname === '/admin' ? 'underline' : 'none',
                 }}
               >
                 Admin
@@ -87,10 +88,6 @@ const Header = (props) => {
           handleDrawerToggle={handleDrawerToggle}
         />
       </Box>
-
-      {/* <Box>
-        <Toolbar />
-      </Box> */}
     </Box>
   );
 };

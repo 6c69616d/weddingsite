@@ -1,3 +1,46 @@
 html {
   scroll-behavior: smooth;
 }
+
+body {
+  background: rgb(255, 255, 255);
+}
+
+.tick {
+  font-size: 1rem;
+  white-space: nowrap;
+  font-family: arial, sans-serif;
+}
+
+.tick-flip-panel {
+  background-color: #914555 !important;
+}
+/* 
+.globalHeader {
+  opacity: 0;
+  animation: headerFade 1s ease 0.5s forwards;
+}
+
+.globalContainer {
+  animation: globalFade 2s ease 1s forwards;
+}
+
+@keyframes headerFade {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes globalFade {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+  }
+} */
