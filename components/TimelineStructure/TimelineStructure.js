@@ -19,7 +19,7 @@ const events = [
     icon: <GroupsIcon color="secondary" />,
   },
   {
-    time: '13:00',
+    time: '13:30',
     event: 'Ceremony',
     icon: <HistoryEduIcon color="secondary" />,
   },
@@ -34,7 +34,7 @@ const events = [
     icon: <RestaurantIcon color="secondary" />,
   },
   {
-    time: '18:30',
+    time: '19:00',
     event: 'Reception Guest Arrival',
     icon: <GroupsIcon color="secondary" />,
   },
