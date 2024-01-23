@@ -72,12 +72,12 @@ const RsvpForm = ({ data, apiCall, handleClose, onSuccessCallback }) => {
                           fontWeight: 'bolder',
                         }}
                       >
-                        Do you have any dietry requirements we should be aware
+                        Do you have any dietary requirements we should be aware
                         of?
                       </FormLabel>
                       <FormikTextField
                         name='dietryReqs'
-                        label='Dietry Requirements'
+                        label='Dietary Requirements'
                         multiline={true}
                         rows={3}
                       />
