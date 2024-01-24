@@ -61,12 +61,9 @@ const questions = [
 
 const styles = {
   question: {
-    fontFamily: 'Belleza',
     fontWeight: 'bold',
   },
-  answer: {
-    fontFamily: 'Belleza',
-  },
+  answer: {},
 };
 
 const Faq = () => {

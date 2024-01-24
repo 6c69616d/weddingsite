@@ -1,6 +1,12 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
-import { Box, Button, CircularProgress } from '@mui/material';
+import {
+  Box,
+  Button,
+  CircularProgress,
+  ThemeProvider,
+  createTheme,
+} from '@mui/material';
 import useSWR, { useSWRConfig } from 'swr';
 import axios from 'axios';
 
@@ -9,6 +15,8 @@ import DialogActions from '../../components/Dialog/DialogActions';
 import DataTable from '../../components/DataTable';
 import { getColumnData } from '../../utils/columnData';
 import { fetcher } from '../../utils/utils';
+import { roboto } from './style';
+import { useTheme } from '@emotion/react';
 
 const Admin = () => {
   const router = useRouter();
@@ -55,10 +63,18 @@ const Admin = () => {
   };
 
   const columns = getColumnData(deleteCallback);
+  const existingTheme = useTheme();
+
+  const theme = createTheme({
+    ...existingTheme,
+    typography: {
+      fontFamily: 'roboto.style.fontFamily',
+    },
+  });
 
   return (
-    <>
-      <Box mt={3}>
+    <ThemeProvider theme={theme}>
+      <Box mt={3} className={roboto.className}>
         {data ? (
           <>
             <Box display={'flex'} justifyContent={'flex-end'}>
@@ -86,7 +102,7 @@ const Admin = () => {
         ) : null}
       </Box>
       <Dialog {...dialogProps} />
-    </>
+    </ThemeProvider>
   );
 };
 

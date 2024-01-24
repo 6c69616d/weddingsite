@@ -4,7 +4,6 @@ const Typography = ({ variant = 'p', sx, children, ...rest }) => (
   <MTypo
     variant={variant}
     sx={{
-      fontFamily: 'Belleza',
       fontWeight: 'bold',
       textAlign: 'center',
       paddingBottom: '10px',

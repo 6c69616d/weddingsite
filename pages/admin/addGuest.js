@@ -1,9 +1,13 @@
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import GuestForm from '../../components/Form/GuestForm/GuestForm';
+import { roboto } from './style';
+import { useTheme } from '@emotion/react';
+import { createTheme, ThemeProvider } from '@mui/material';
 
 const AddGuest = () => {
   const router = useRouter();
+  const existingTheme = useTheme();
 
   const createGuest = async (data) => {
     try {
@@ -14,6 +18,13 @@ const AddGuest = () => {
       console.log('error', err);
     }
   };
+
+  const theme = createTheme({
+    ...existingTheme,
+    typography: {
+      fontFamily: roboto.style.fontFamily,
+    },
+  });
 
   const guest = {
     name: '',
@@ -30,13 +41,13 @@ const AddGuest = () => {
   };
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <GuestForm
         data={guest}
         apiCall={createGuest}
         submitText='Add New Guest'
       />
-    </>
+    </ThemeProvider>
   );
 };
 
