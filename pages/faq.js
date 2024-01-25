@@ -42,21 +42,18 @@ const questions = [
     answer:
       'Your attendance at our special day is all we ask. If you do wish to honour us with a gift, a contribution to our honeymoon excursions would be kindly received.',
   },
-  // {
-  //   id: 7,
-  //   question: '',
-  //   answer: '',
-  // },
-  // {
-  //   id: 8,
-  //   question: '',
-  //   answer: '',
-  // },
-  // {
-  //   id: 9,
-  //   question: '',
-  //   answer: '',
-  // },
+  {
+    id: 7,
+    question: 'Can I bring a plus one?',
+    answer:
+      'Due to limited space, we are only able to accommodate those guests formally invited. If you have received a plus one they will appear on the add RSVP form.',
+  },
+  {
+    id: 8,
+    question: 'Is there parking at the venue?',
+    answer:
+      'Yes, there is complimentary guest parking.',
+  },
 ];
 
 const styles = {
