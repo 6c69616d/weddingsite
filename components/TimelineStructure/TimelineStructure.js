@@ -29,7 +29,7 @@ const events = [
     icon: <PhotoCameraIcon color='secondary' />,
   },
   {
-    time: '15:00',
+    time: '15:30',
     event: 'Wedding Breakfast',
     icon: <RestaurantIcon color='secondary' />,
   },
