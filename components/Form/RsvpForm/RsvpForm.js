@@ -91,7 +91,7 @@ const RsvpForm = ({ data, apiCall, handleClose, onSuccessCallback }) => {
 
                 {values.additionalGuests.length ? (
                   <Paper>
-                    <FormControl>
+                    <FormControl sx={{ width: '100%' }}>
                       <FormLabel
                         sx={{ marginBottom: '1rem', fontWeight: 'bolder' }}
                       >

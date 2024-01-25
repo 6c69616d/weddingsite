@@ -3,7 +3,6 @@ import TimelineIcon from '@mui/icons-material/Timeline';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import HelpIcon from '@mui/icons-material/Help';
 import HotelIcon from '@mui/icons-material/Hotel';
-import RsvpIcon from '@mui/icons-material/Rsvp';
 import ReplyIcon from '@mui/icons-material/Reply';
 
 export const routes = [
