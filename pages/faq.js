@@ -46,13 +46,19 @@ const questions = [
     id: 7,
     question: 'Can I bring a plus one?',
     answer:
-      'Due to limited space, we are only able to accommodate those guests formally invited. If you have received a plus one they will appear on the add RSVP form.',
+      'Due to limited space, we are only able to accommodate those guests formally invited. If you have received a plus one they will be addressed on your invitiation and RSVP form.',
   },
   {
     id: 8,
     question: 'Is there parking at the venue?',
     answer:
       'Yes, there is complimentary guest parking.',
+  },
+  {
+    id: 9,
+    question: 'Can we bring our children?',
+    answer:
+      'Invitations will be specific and will include the names of children who are invited. However, we encourage you to use this evening as a date night for yourselves!',
   },
 ];
 

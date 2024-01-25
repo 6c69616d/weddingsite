@@ -9,7 +9,7 @@ const Song = () => (
       sx={{ marginBottom: '1rem', fontWeight: 'bolder' }}
       component='legend'
     >
-      What song would get you on the dancefloor?
+      What song will get you on the dancefloor?
     </FormLabel>
 
     <Grid container spacing={1}>
