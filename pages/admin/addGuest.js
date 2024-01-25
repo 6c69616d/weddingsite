@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import GuestForm from '../../components/Form/GuestForm/GuestForm';
-import { roboto } from './style';
+import { roboto } from '../../styles/style';
 import { useTheme } from '@emotion/react';
 import { createTheme, ThemeProvider } from '@mui/material';
 

@@ -15,7 +15,7 @@ import DialogActions from '../../components/Dialog/DialogActions';
 import DataTable from '../../components/DataTable';
 import { getColumnData } from '../../utils/columnData';
 import { fetcher } from '../../utils/utils';
-import { roboto } from './style';
+import { roboto } from '../../styles/style';
 import { useTheme } from '@emotion/react';
 
 const Admin = () => {
