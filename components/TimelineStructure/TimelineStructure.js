@@ -16,49 +16,61 @@ const events = [
   {
     time: '12:30',
     event: 'Guest Arrival',
-    icon: <GroupsIcon color="secondary" />,
+    icon: <GroupsIcon color='secondary' />,
   },
   {
     time: '13:30',
     event: 'Ceremony',
-    icon: <HistoryEduIcon color="secondary" />,
+    icon: <HistoryEduIcon color='secondary' />,
   },
   {
     time: '14:00',
     event: 'Photos and Drinks',
-    icon: <PhotoCameraIcon color="secondary" />,
+    icon: <PhotoCameraIcon color='secondary' />,
   },
   {
     time: '15:00',
     event: 'Wedding Breakfast',
-    icon: <RestaurantIcon color="secondary" />,
+    icon: <RestaurantIcon color='secondary' />,
   },
   {
     time: '19:00',
     event: 'Reception Guest Arrival',
-    icon: <GroupsIcon color="secondary" />,
+    icon: <GroupsIcon color='secondary' />,
   },
   {
     time: '00:00',
     event: 'End',
-    icon: <BedtimeIcon color="secondary" />,
+    icon: <BedtimeIcon color='secondary' />,
   },
 ];
-
 
 const TimelineStructure = () => {
   return (
     <Timeline position='alternate'>
       {events.map((e, i) => (
         <TimelineItem key={i}>
-          <TimelineOppositeContent sx={{fontFamily:'Belleza', fontWeight: 'bold',}} color='text.secondary'>
+          <TimelineOppositeContent
+            sx={{ fontWeight: 'bold' }}
+            color='text.secondary'
+          >
             {e.time}
           </TimelineOppositeContent>
           <TimelineSeparator>
-            {e.icon ? <TimelineDot color="primary" variant="outlined" >{e.icon}</TimelineDot> : <TimelineDot color="primary" />}
-            {i !== events.length - 1 ? <TimelineConnector sx={{ bgcolor: 'primary.main' }} /> : null}
+            {e.icon ? (
+              <TimelineDot color='primary' variant='outlined'>
+                {e.icon}
+              </TimelineDot>
+            ) : (
+              <TimelineDot color='primary' />
+            )}
+            {i !== events.length - 1 ? (
+              <TimelineConnector sx={{ bgcolor: 'primary.main' }} />
+            ) : null}
           </TimelineSeparator>
-          <TimelineContent sx={{fontFamily:'Belleza', fontWeight: 'bold',}}>{e.event}</TimelineContent>
+          <TimelineContent sx={{ fontWeight: 'bold' }}>
+            {e.event}
+          </TimelineContent>
         </TimelineItem>
       ))}
     </Timeline>

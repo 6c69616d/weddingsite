@@ -1,21 +1,12 @@
 import { SessionProvider } from 'next-auth/react';
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
-import { CacheProvider } from '@emotion/react';
+import { AppCacheProvider } from '@mui/material-nextjs/v13-pagesRouter';
 import Layout from '../components/Layout';
-import createEmotionCache from '../utils/createEmotionCache';
 import '../styles/global.css';
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
-import '@fontsource/amatic-sc/400.css';
-import '@fontsource/amatic-sc/700.css';
-import '@fontsource/tangerine/400.css';
-import '@fontsource/tangerine/700.css';
-import '@fontsource/belleza/400.css';
 import Head from 'next/head';
+import { Belleza } from 'next/font/google';
 
-const clientSideEmotionCache = createEmotionCache();
+const belleza = Belleza({ weight: '400', subsets: ['latin'] });
 
 let theme = createTheme({
   palette: {
@@ -47,6 +38,9 @@ let theme = createTheme({
       xl: 1536,
     },
   },
+  typography: {
+    fontFamily: belleza.style.fontFamily,
+  },
 });
 
 theme.typography.h1 = {
@@ -63,26 +57,24 @@ theme.typography.h1 = {
   },
 };
 
-const App = ({
-  Component,
-  emotionCache = clientSideEmotionCache,
-  pageProps: { session, ...pageProps },
-}) => {
+const App = ({ Component, pageProps: { session, ...pageProps } }) => {
   return (
-    <CacheProvider value={emotionCache}>
-      <SessionProvider session={session}>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
+    <SessionProvider session={session}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <AppCacheProvider {...pageProps}>
           <Head>
             <title>The Sykes Wedding</title>
             <meta property='og:title' content='The Sykes Wedding' key='title' />
           </Head>
+        </AppCacheProvider>
+        <div className={belleza.className}>
           <Layout>
             <Component {...pageProps} />
           </Layout>
-        </ThemeProvider>
-      </SessionProvider>
-    </CacheProvider>
+        </div>
+      </ThemeProvider>
+    </SessionProvider>
   );
 };
 

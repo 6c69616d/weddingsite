@@ -22,7 +22,6 @@ const Drawer = ({ handleDrawerToggle, routes, router }) => (
         >
           <ListItemButton
             sx={{
-              fontFamily: 'Belleza',
               fontWeight: 'bold',
               textAlign: 'center',
               textDecoration:

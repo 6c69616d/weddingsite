@@ -48,7 +48,7 @@ const RSVP = () => {
 
   const validateCode = async () => {
     axios
-      .post('/api/rsvp/validate', { rsvpCode: value })
+      .post('/api/rsvp/validate', { rsvpCode: value.toUpperCase() })
       .then((res) => {
         handleResponse(res.data);
       })
@@ -81,12 +81,11 @@ const RSVP = () => {
             fontSize: '2rem',
             fontWeight: 700,
             lineHeight: '1',
-            fontFamily: 'Belleza',
           },
         },
         open: true,
         fullWidth: true,
-        maxWidth: 'lg',
+        maxWidth: 'md',
         onClose: () => {},
         content: (
           <RsvpForm
@@ -130,7 +129,6 @@ const RSVP = () => {
           sx={{
             minWidth: '250px',
             marginBottom: '1rem',
-            fontFamily: 'Belleza',
           }}
           label='Please enter your RSVP Code'
           value={value}
@@ -138,12 +136,7 @@ const RSVP = () => {
           helperText={error}
           error={Boolean(error)}
         />
-        <Button
-          type='submit'
-          variant='contained'
-          disabled={buttonDisabled}
-          sx={{ fontFamily: 'Belleza' }}
-        >
+        <Button type='submit' variant='contained' disabled={buttonDisabled}>
           Submit
         </Button>
       </Box>
