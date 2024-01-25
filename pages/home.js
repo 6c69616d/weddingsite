@@ -22,7 +22,7 @@ const Home = () => {
         <Typography variant={'h1'}>
           You're invited to the Sykes wedding!
         </Typography>
-        <EventCountdown value='2024-06-29T13:00:00' />
+        <EventCountdown value='2024-06-29T12:30:00' />
         <Image
           src={logo}
           alt={'Sykes wedding logo'}

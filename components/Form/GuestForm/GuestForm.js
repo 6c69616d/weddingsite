@@ -118,7 +118,7 @@ const GuestForm = ({ data, apiCall, submitText }) => {
               <FormField>
                 <FormikTextField
                   name='dietryReqs'
-                  label='Dietry Requirements'
+                  label='Dietary Requirements'
                   multiline
                   rows={4}
                 />
