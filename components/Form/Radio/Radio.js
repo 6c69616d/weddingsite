@@ -7,7 +7,7 @@ import {
 } from '@mui/material';
 import { useField } from 'formik';
 
-const FormikRadioGroup = ({ name, options, ...rest }) => {
+const FormikRadioGroup = ({ name, options, guestName, ...rest }) => {
   const [field, meta] = useField(name);
 
   const config = {
@@ -18,7 +18,7 @@ const FormikRadioGroup = ({ name, options, ...rest }) => {
   return (
     <FormControl>
       <FormLabel sx={{ marginBottom: '1rem', fontWeight: 'bolder' }}>
-        Will you be celebrating with us?
+        Will {guestName} be celebrating with us?
       </FormLabel>
       <RadioGroup {...config}>
         {options.map((opt) => (

@@ -61,32 +61,7 @@ const RsvpForm = ({ data, apiCall, handleClose, onSuccessCallback }) => {
                   </Typography>
                 </Box>
                 <Paper>
-                  <FormikRadioGroup name='isAttending' options={options} />
-                </Paper>
-                <>
-                  <Paper>
-                    <FormControl sx={{ width: '100%' }}>
-                      <FormLabel
-                        sx={{
-                          marginBottom: '1rem',
-                          fontWeight: 'bolder',
-                        }}
-                      >
-                        Do you have any dietary requirements we should be aware
-                        of?
-                      </FormLabel>
-                      <FormikTextField
-                        name='dietryReqs'
-                        label='Dietary Requirements'
-                        multiline={true}
-                        rows={3}
-                      />
-                    </FormControl>
-                  </Paper>
-                </>
-
-                <Paper>
-                  <Song />
+                  <FormikRadioGroup name='isAttending' options={options} guestName={data.name}/>
                 </Paper>
 
                 {values.additionalGuests.length ? (
@@ -111,6 +86,34 @@ const RsvpForm = ({ data, apiCall, handleClose, onSuccessCallback }) => {
                     </FormControl>
                   </Paper>
                 ) : null}
+
+                <>
+                  <Paper>
+                    <FormControl sx={{ width: '100%' }}>
+                      <FormLabel
+                        sx={{
+                          marginBottom: '1rem',
+                          fontWeight: 'bolder',
+                        }}
+                      >
+                        Do you or any of your party have any dietary requirements we should be aware
+                        of?
+                      </FormLabel>
+                      <FormikTextField
+                        name='dietryReqs'
+                        label='Dietary Requirements'
+                        multiline={true}
+                        rows={3}
+                      />
+                    </FormControl>
+                  </Paper>
+                </>
+
+                <Paper>
+                  <Song />
+                </Paper>
+
+
 
                 <ButtonGroup>
                   <Button
