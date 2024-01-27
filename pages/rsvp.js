@@ -40,7 +40,7 @@ const RSVP = () => {
     setDialogProps({
       open: true,
       title: 'Thank you for your response',
-      content: <Typography>Ta very much like</Typography>,
+      content: '',
       onClose: handleDialogClose,
       dialogActions: <Button onClick={handleDialogClose}>Close</Button>,
     });
