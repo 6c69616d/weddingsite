@@ -32,7 +32,7 @@ export const getColumnData = (deleteCallback) => {
       headerName: "Has RSVP'd?",
       headerAlign: 'center',
       align: 'center',
-      sortable: false,
+      sortable: true,
       renderCell: ({ row }) =>
         row.hasRsvpd ? (
           <CheckCircleIcon sx={{ color: '#5ce31e' }} />
@@ -46,7 +46,7 @@ export const getColumnData = (deleteCallback) => {
       headerName: 'Is Attending?',
       headerAlign: 'center',
       align: 'center',
-      sortable: false,
+      sortable: true,
       renderCell: ({ row }) =>
         row.isAttending ? (
           <CheckCircleIcon sx={{ color: '#5ce31e' }} />
