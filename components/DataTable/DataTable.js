@@ -16,6 +16,14 @@ const DataTable = ({ rows, columns }) => {
       disableColumnMenu
       disableColumnSelector
       disableRowSelectionOnClick
+      pageSizeOptions={[10, 20, 50, 100]}
+      initialState={{
+        pagination: {
+          paginationModel: {
+            pageSize: 10,
+          },
+        },
+      }}
       slots={{
         noRowsOverlay: NoData,
       }}
